@@ -9,6 +9,10 @@ package modelo.acabados;
  *
  * @author nicoleagila
  */
-public class Griferia {
+public class Griferia extends Acabado {
+    
+    public Griferia(double costo) {
+        super(costo);
+    }
     
 }

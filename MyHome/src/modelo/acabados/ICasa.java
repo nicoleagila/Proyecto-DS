@@ -10,5 +10,5 @@ package modelo.acabados;
  * @author nicoleagila
  */
 public interface ICasa {
-    
+    public void agregarAcabado();
 }

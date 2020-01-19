@@ -11,5 +11,10 @@ package modelo.acabados;
  */
 public abstract class Acabado {
     protected double costo;
+
+    public Acabado(double costo) {
+        this.costo = costo;
+    }
+    
     
 }

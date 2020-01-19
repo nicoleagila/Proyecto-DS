@@ -11,4 +11,8 @@ package modelo.acabados;
  */
 public class Piso extends Acabado{
     
+    public Piso(double costo) {
+        super(costo);
+    }
+    
 }

@@ -5,10 +5,41 @@
  */
 package modelo.casas;
 
+import modelo.Casa;
+import modelo.datos.Orientacion;
+import modelo.datos.TamanoPatio;
+
 /**
  *
  * @author nicoleagila
  */
 public class CasaOasisBuilder extends CasaBuilder{
-    
+
+    @Override
+    public void crearInterior() {
+        c.setNumHabitaciones(2);
+        c.setNumBanos(2);
+        c.setNumeroPisos(1);
+    }
+
+    @Override
+    public void definirCasa() {
+        c= new Casa();
+        c.setNombre("Oasis");
+        c.setCostoFinal(20000);
+    }
+
+    @Override
+    public void crearExterior() {
+        c.setMetrosCuadrados(10);
+        c.setEsquinera(false);
+        c.setOrientacion(Orientacion.OESTE);
+    }
+
+    @Override
+    public void crearPatio() {
+        c.setPatio(false);
+        c.setTamanoPatio(null);
+    }
+ 
 }

@@ -11,4 +11,8 @@ package modelo.acabados;
  */
 public class Iluminacion extends Acabado{
     
+    public Iluminacion(double costo) {
+        super(costo);
+    }
+    
 }

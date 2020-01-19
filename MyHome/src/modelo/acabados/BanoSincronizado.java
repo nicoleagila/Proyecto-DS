@@ -11,4 +11,8 @@ package modelo.acabados;
  */
 public class BanoSincronizado extends Acabado{
     
+    public BanoSincronizado(double costo) {
+        super(costo);
+    }
+    
 }

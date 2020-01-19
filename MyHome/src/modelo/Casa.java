@@ -5,12 +5,121 @@
  */
 package modelo;
 
+import java.util.List;
+import modelo.acabados.Acabado;
 import modelo.acabados.ICasa;
+import modelo.datos.Orientacion;
+import modelo.datos.TamanoPatio;
 
 /**
  *
  * @author nicoleagila
  */
 public class Casa implements ICasa {
+    protected String nombre;
+    protected double metrosCuadrados;
+    protected int numeroPisos;
+    protected boolean esquinera;
+    protected Orientacion orientacion;
+    protected boolean patio;
+    protected TamanoPatio tamanoPatio;
+    protected int numHabitaciones;
+    protected int numBanos;
+    protected List<Acabado> acabados;
+    protected float costoFinal;
+
+    @Override
+    public void agregarAcabado() {
+        
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getMetrosCuadrados() {
+        return metrosCuadrados;
+    }
+
+    public int getNumeroPisos() {
+        return numeroPisos;
+    }
+
+    public boolean isEsquinera() {
+        return esquinera;
+    }
+
+    public Orientacion getOrientacion() {
+        return orientacion;
+    }
+
+    public boolean isPatio() {
+        return patio;
+    }
+
+    public TamanoPatio getTamanoPatio() {
+        return tamanoPatio;
+    }
+
+    public int getNumHabitaciones() {
+        return numHabitaciones;
+    }
+
+    public int getNumBanos() {
+        return numBanos;
+    }
+
+    public List<Acabado> getAcabados() {
+        return acabados;
+    }
+
+    public float getCostoFinal() {
+        return costoFinal;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setMetrosCuadrados(double metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
+    }
+
+    public void setNumeroPisos(int numeroPisos) {
+        this.numeroPisos = numeroPisos;
+    }
+
+    public void setEsquinera(boolean esquinera) {
+        this.esquinera = esquinera;
+    }
+
+    public void setOrientacion(Orientacion orientacion) {
+        this.orientacion = orientacion;
+    }
+
+    public void setPatio(boolean patio) {
+        this.patio = patio;
+    }
+
+    public void setTamanoPatio(TamanoPatio tamanoPatio) {
+        this.tamanoPatio = tamanoPatio;
+    }
+
+    public void setNumHabitaciones(int numHabitaciones) {
+        this.numHabitaciones = numHabitaciones;
+    }
+
+    public void setNumBanos(int numBanos) {
+        this.numBanos = numBanos;
+    }
+
+    public void setAcabados(List<Acabado> acabados) {
+        this.acabados = acabados;
+    }
+
+    public void setCostoFinal(float costoFinal) {
+        this.costoFinal = costoFinal;
+    }
+    
     
 }

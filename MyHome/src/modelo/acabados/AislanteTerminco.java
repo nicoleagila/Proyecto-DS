@@ -10,5 +10,12 @@ package modelo.acabados;
  * @author nicoleagila
  */
 public class AislanteTerminco extends Acabado{
+
+    public AislanteTerminco(double costo) {
+        super(costo);
+    }
+
+    
+ 
     
 }
