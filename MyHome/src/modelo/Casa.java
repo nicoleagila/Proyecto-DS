@@ -28,6 +28,24 @@ public class Casa implements ICasa {
     protected List<Acabado> acabados;
     protected float costoFinal;
 
+    public Casa(String nombre, double metrosCuadrados, int numeroPisos, boolean esquinera, Orientacion orientacion, boolean patio, TamanoPatio tamanoPatio, int numHabitaciones, int numBanos, List<Acabado> acabados, float costoFinal) {
+        this.nombre = nombre;
+        this.metrosCuadrados = metrosCuadrados;
+        this.numeroPisos = numeroPisos;
+        this.esquinera = esquinera;
+        this.orientacion = orientacion;
+        this.patio = patio;
+        this.tamanoPatio = tamanoPatio;
+        this.numHabitaciones = numHabitaciones;
+        this.numBanos = numBanos;
+        this.acabados = acabados;
+        this.costoFinal = costoFinal;
+    }
+
+    public Casa() {
+    }
+    
+    
     @Override
     public void agregarAcabado() {
         
