@@ -9,6 +9,6 @@ package modelo;
  *
  * @author nicoleagila
  */
-public class Cuenta {
-    private Persona usuario;
+public class MyHome {
+    
 }

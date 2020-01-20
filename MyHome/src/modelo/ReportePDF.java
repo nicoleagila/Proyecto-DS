@@ -11,6 +11,11 @@ package modelo;
  */
 public class ReportePDF implements PDF{
 
+    public ReportePDF() {
+    }
+    
+    
+
     @Override
     public String generarPDF() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

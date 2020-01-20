@@ -3,49 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package controlador.auxiliares;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import modelo.Casa;
-import modelo.database.Conexion;
 
 /**
  * FXML Controller class
  *
  * @author nicoleagila
  */
-public class DisenarCasaFXMLController implements Initializable {
+public class NoRegistradoFXMLController implements Initializable {
 
     @FXML
-    private AnchorPane id;
+    private AnchorPane paneauxiliar;
     @FXML
-    private HBox cajaCasasBasicas;
+    private Label lblmensaje;
     @FXML
-    private Label lblescoger;
-    @FXML
-    private Button btEscoger;
-    
-    private HashMap<Integer,Casa> casasBase;
+    private Button btregistrocliente;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }
-    
-    private void agregarCasasBase(){
-        Conexion c = Conexion.getInstance();
-    }
+        // TODO
+    }    
     
 }
