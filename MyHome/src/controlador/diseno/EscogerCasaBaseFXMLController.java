@@ -5,24 +5,26 @@
  */
 package controlador.diseno;
 
+import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.Date;
-import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import modelo.Casa;
-import modelo.acabados.Acabado;
-import modelo.database.Conexion;
-import modelo.datos.Orientacion;
-import modelo.datos.TamanoPatio;
+import static modelo.MyHome.casas_base;
+import static myhome.MyHome.stPrincipal;
 
 /**
  * FXML Controller class
@@ -30,7 +32,7 @@ import modelo.datos.TamanoPatio;
  * @author nicoleagila
  */
 public class EscogerCasaBaseFXMLController implements Initializable {
-    Connection bd = Conexion.getInstance().getConexion();
+    
     @FXML
     private AnchorPane id;
     @FXML
@@ -49,30 +51,26 @@ public class EscogerCasaBaseFXMLController implements Initializable {
     }    
     
     private void llenarCasasBase(){
-        try (Statement st = bd.createStatement()) {
-            String query = "SELECT * FROM casa_modelo;";
-            try(ResultSet rs = st.executeQuery(query)){
-                while (rs.next()){
-                    int idC =rs.getInt("id");
-                    String nombre = rs.getString("nombre");
-                    double mCuadrados= rs.getDouble("mCuadrados");
-                    int nPisos=rs.getInt("nPisos");
-                    boolean esquinera= rs.getBoolean("esquinera");
-                    int orientacion=rs.getInt("orientacion");
-                    boolean patio = rs.getBoolean("patio");
-                    int tamanoPatio=rs.getInt("tamanoPatio");
-                    int nHabitaciones=rs.getInt("nHabitaciones");
-                    int nBanos=rs.getInt("nBanos");
-                    float costo_base=rs.getFloat("costo_base");
-                    VBox casa = new VBox();
-                    casa.getChildren().add(new Label(nombre));
-                    
-                    cajaCasasBasicas.getChildren().add(casa);                
+        for (Map.Entry<Integer, Casa> entry : casas_base.entrySet()) {
+            Casa c= entry.getValue();
+            VBox cajaCasa = new VBox();
+            Label nombre = new Label(c.getNombre());
+            ImageView imgv = new ImageView(new Image(Integer.toString(c.getId())+".jpg"));
+            imgv.setOnMouseClicked(e->{
+                Parent rootAcabados = null;
+                try {
+                    rootAcabados = FXMLLoader.load(getClass().getResource("/vistas.diseno/AddAcabadosFXML.fxml"));
+                } catch (IOException ex) {
+                    Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }catch(Exception e){   
-            }
-        } catch (Exception e) {
-        }
+                AddAcabadosFXMLController.casaescogida=c;
+                stPrincipal.setScene(new Scene(rootAcabados));
+                stPrincipal.show();
+            });
+            cajaCasa.getChildren().addAll(nombre,imgv);
+            cajaCasasBasicas.getChildren().add(cajaCasa);         
+        }        
     }
+
     
 }

@@ -25,6 +25,7 @@ public class CasaParaisoBuilder extends CasaBuilder{
     public void definirCasa() {
         c= new Casa();
         c.setNombre("Paraiso");
+        c.setId(2);
         c.setCostoFinal(200000);
     }
 

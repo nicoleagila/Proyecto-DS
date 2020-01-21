@@ -25,6 +25,7 @@ public class CasaCieloBuilder extends CasaBuilder{
     @Override
     public void definirCasa() {
         c= new Casa();
+        c.setId(3);
         c.setNombre("Cielo");
         c.setCostoFinal(2000000);
     }

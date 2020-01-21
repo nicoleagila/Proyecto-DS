@@ -16,6 +16,7 @@ import modelo.datos.TamanoPatio;
  * @author nicoleagila
  */
 public class Casa implements ICasa {
+    protected int id;
     protected String nombre;
     protected double metrosCuadrados;
     protected int numeroPisos;
@@ -28,7 +29,8 @@ public class Casa implements ICasa {
     protected List<Acabado> acabados;
     protected float costoFinal;
 
-    public Casa(String nombre, double metrosCuadrados, int numeroPisos, boolean esquinera, Orientacion orientacion, boolean patio, TamanoPatio tamanoPatio, int numHabitaciones, int numBanos, List<Acabado> acabados, float costoFinal) {
+    public Casa(int id,String nombre, double metrosCuadrados, int numeroPisos, boolean esquinera, Orientacion orientacion, boolean patio, TamanoPatio tamanoPatio, int numHabitaciones, int numBanos, List<Acabado> acabados, float costoFinal) {
+        this.id=id;
         this.nombre = nombre;
         this.metrosCuadrados = metrosCuadrados;
         this.numeroPisos = numeroPisos;
@@ -44,6 +46,16 @@ public class Casa implements ICasa {
 
     public Casa() {
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
     
     
     @Override
