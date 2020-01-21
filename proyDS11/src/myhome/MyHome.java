@@ -6,15 +6,11 @@
 package myhome;
 
 import java.io.IOException;
-import java.sql.Connection;
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 /**
  *
@@ -28,7 +24,7 @@ public class MyHome extends Application{
     
     @Override
     public void start(Stage stage) throws IOException  {        
-        FXMLLoader loaderLogin=new FXMLLoader(getClass().getResource("/interfazempleado/FXMLEmpleado.fxml"));
+        FXMLLoader loaderLogin=new FXMLLoader(getClass().getResource("/vistas/UsuariosFXML.fxml"));
         Parent rootPrincipal= (Parent) loaderLogin.load();
         Scene scPrincipal = new Scene(rootPrincipal);
         stPrincipal.setScene(scPrincipal);
@@ -37,7 +33,7 @@ public class MyHome extends Application{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+     launch()   ;
     }
     
 }

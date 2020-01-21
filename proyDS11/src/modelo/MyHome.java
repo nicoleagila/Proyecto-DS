@@ -6,11 +6,7 @@
 package modelo;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.HashMap;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 import modelo.database.Conexion;
 
 /**

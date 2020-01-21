@@ -19,9 +19,9 @@ public class Conexion  {
 
     private Conexion() {
         Connection con = null;
-        String url = "jdbc:mysql://localhost:3306/migraciones";
+        String url = "jdbc:mysql://ip:3306/myhomedatabase";
         String user= "root";
-        String pass= "nsaproot";
+        String pass= "pass";
         try {
             con = DriverManager.getConnection(url, user, pass);
             this.conexion= con;
