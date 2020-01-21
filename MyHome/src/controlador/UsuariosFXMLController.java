@@ -7,6 +7,7 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,16 +16,18 @@ import javafx.scene.layout.AnchorPane;
 /**
  * FXML Controller class
  *
- * @author nicoleagila
+ * @author josse
  */
-public class LoginFXMLController implements Initializable {
+public class UsuariosFXMLController implements Initializable {
 
     @FXML
-    private Button btnIngresLogin;
+    private AnchorPane pantalla1;
     @FXML
-    private Button btnDesign;
+    private Button btnCliente;
     @FXML
-    private AnchorPane pantalla2;
+    private Button btnVendedor;
+    @FXML
+    private Button btnAdministrador;
 
     /**
      * Initializes the controller class.
@@ -33,5 +36,18 @@ public class LoginFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void loginCliente(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void loginVend(ActionEvent event) {
+    }
+
+    @FXML
+    private void loginAdmin(ActionEvent event) {
+    }
     
 }
