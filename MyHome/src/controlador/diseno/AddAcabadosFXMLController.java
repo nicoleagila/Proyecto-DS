@@ -12,9 +12,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import modelo.Casa;
+import modelo.acabados.Acabado;
 
 /**
  * FXML Controller class
@@ -40,7 +43,7 @@ public class AddAcabadosFXMLController implements Initializable {
     @FXML
     private Label valorfinal;
     @FXML
-    private ListView<?> listvaracteristicas;
+    private ListView<Acabado> listvaracteristicas;
     @FXML
     private VBox paneopcionesacabados;
     @FXML
@@ -49,13 +52,19 @@ public class AddAcabadosFXMLController implements Initializable {
     private Button btguardar;
     @FXML
     private Button btenviar;
+    
+    static Casa casaescogida;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        imgviewcasa.setImage(new Image(Integer.toString(casaescogida.getId())+".jpg"));
+        lblnombrecasa.setText(casaescogida.getNombre());
+        lblbase.setText(Float.toString(casaescogida.getCostoFinal()));
+        
+        
     }    
     
 }
