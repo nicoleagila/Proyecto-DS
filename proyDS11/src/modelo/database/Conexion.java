@@ -19,9 +19,9 @@ public class Conexion  {
 
     private Conexion() {
         Connection con = null;
-        String url = "jdbc:mysql://ip:3306/myhomedatabase";
+        String url = "jdbc:mysql://192.168.99.100:3308/MyHomeDataBase";
         String user= "root";
-        String pass= "pass";
+        String pass= "root";
         try {
             con = DriverManager.getConnection(url, user, pass);
             this.conexion= con;
