@@ -24,5 +24,5 @@ public abstract class Persona {
     protected Direccion direccionCasa;
     protected PhoneNumber telefonoTrabajo;
     protected EstadoCivil estadoCivil;
-    protected boolean activo;
+    protected boolean activo;    
 }

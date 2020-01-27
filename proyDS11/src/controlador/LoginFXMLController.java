@@ -68,6 +68,7 @@ public class LoginFXMLController implements Initializable {
     
     @FXML
     private void disenoRapido(ActionEvent event) {
+        
     }
     
 }
