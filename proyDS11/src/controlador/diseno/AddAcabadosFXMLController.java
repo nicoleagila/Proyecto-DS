@@ -84,7 +84,6 @@ public class AddAcabadosFXMLController implements Initializable {
         llenarCaracteristicas();
         llenarAcabados();
         paneopcionesacabados.setSpacing(25);
-        persona.setRegistrado(true);
         
     }    
     

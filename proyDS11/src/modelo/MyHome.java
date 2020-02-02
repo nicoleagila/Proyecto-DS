@@ -16,7 +16,7 @@ import modelo.database.Conexion;
 public class MyHome {
     public static HashMap<Integer,Casa> casas_base = new HashMap<>();
     public static Connection bd = Conexion.getInstance().getConexion();
-    public static Persona persona = new Cliente();
+    public static Persona persona;
     public static Cuenta cuenta;
     
     
