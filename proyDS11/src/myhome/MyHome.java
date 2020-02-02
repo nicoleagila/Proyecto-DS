@@ -18,19 +18,21 @@ import javafx.stage.Stage;
  */
 public class MyHome extends Application{
 
-    public static final Stage stPrincipal = new Stage();
-    public static final Stage stAuxiliar = new Stage();
-    public static final Stage stForms = new Stage();
+    public static final Stage STPRINCIPAL = new Stage();
+    public static final Stage STAUXILIAR = new Stage();
+    public static final Stage STFORMS = new Stage();
     
     @Override
     public void start(Stage stage) throws IOException  {        
         FXMLLoader loaderLogin=new FXMLLoader(getClass().getResource("/vistas/UsuariosFXML.fxml"));
         Parent rootPrincipal= (Parent) loaderLogin.load();
         Scene scPrincipal = new Scene(rootPrincipal);
-        stPrincipal.setScene(scPrincipal);
-        stPrincipal.show();
-    }   /**
-     * @param args the command line arguments
+        STPRINCIPAL.setScene(scPrincipal);
+        STPRINCIPAL.show();
+    }
+    /**
+     *
+     * @param args the command line arguments /**
      */
     public static void main(String[] args) {
      launch()   ;

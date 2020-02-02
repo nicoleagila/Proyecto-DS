@@ -16,7 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import static myhome.MyHome.stPrincipal;
+import static myhome.MyHome.STPRINCIPAL;
 
 /**
  * FXML Controller class
@@ -44,8 +44,8 @@ public class VendedorInterfazController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stPrincipal.setScene(new Scene(rootUsuarios));
-        stPrincipal.show();
+        STPRINCIPAL.setScene(new Scene(rootUsuarios));
+        STPRINCIPAL.show();
     }
 
     @FXML
@@ -56,8 +56,8 @@ public class VendedorInterfazController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stPrincipal.setScene(new Scene(rootUsuarios));
-        stPrincipal.show();
+        STPRINCIPAL.setScene(new Scene(rootUsuarios));
+        STPRINCIPAL.show();
     }
 
     @FXML
@@ -74,8 +74,8 @@ public class VendedorInterfazController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stPrincipal.setScene(new Scene(rootUsuarios));
-        stPrincipal.show();
+        STPRINCIPAL.setScene(new Scene(rootUsuarios));
+        STPRINCIPAL.show();
     }
     
 }

@@ -197,9 +197,11 @@ public class AddAcabadosFXMLController implements Initializable {
     }
     
     private void sum(Event e, Label precio,Acabado acabado){
-        Spinner<Integer> spinner = (Spinner) e.getSource();
-        precio.setText(Float.toString(acabado.getCosto()*spinner.getValue()));
-        
+        if(CLIENTE.isRegistrado()){
+                precio.setVisible(true);
+                Spinner<Integer> spinner = (Spinner) e.getSource();
+                precio.setText(Float.toString(acabado.getCosto()*spinner.getValue()));
+        }
     }
 
     @FXML

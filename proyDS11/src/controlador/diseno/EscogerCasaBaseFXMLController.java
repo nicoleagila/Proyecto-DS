@@ -25,7 +25,7 @@ import modelo.casas.CasaCieloBuilder;
 import modelo.casas.CasaDirector;
 import modelo.casas.CasaOasisBuilder;
 import modelo.casas.CasaParaisoBuilder;
-import static myhome.MyHome.stPrincipal;
+import static myhome.MyHome.STPRINCIPAL;
 
 /**
  * FXML Controller class
@@ -86,13 +86,13 @@ public class EscogerCasaBaseFXMLController implements Initializable {
     
     private void changeSceneAcabados() throws IOException{
         Parent rootAcabados = null;
-        //try {
+        try {
             rootAcabados = FXMLLoader.load(getClass().getResource("/vistas/diseno/AddAcabadosFXML.fxml"));
-        //} catch (IOException ex) {
-          //  Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-        //}
-        stPrincipal.setScene(new Scene(rootAcabados));
-        stPrincipal.show();
+        } catch (IOException ex) {
+                Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        STPRINCIPAL.setScene(new Scene(rootAcabados));
+        STPRINCIPAL.show();
         
     }
     

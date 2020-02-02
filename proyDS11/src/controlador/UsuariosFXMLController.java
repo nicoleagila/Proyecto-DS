@@ -21,7 +21,7 @@ import modelo.Administrador;
 import modelo.Cliente;
 import modelo.MyHome;
 import modelo.Vendedor;
-import static myhome.MyHome.stPrincipal;
+import static myhome.MyHome.STPRINCIPAL;
 
 /**
  *
@@ -62,8 +62,8 @@ public class UsuariosFXMLController {
         } catch (IOException ex) {
             Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stPrincipal.setScene(new Scene(rootUsuarios));
-        stPrincipal.show();
+        STPRINCIPAL.setScene(new Scene(rootUsuarios));
+        STPRINCIPAL.show();
     }
     
 }
