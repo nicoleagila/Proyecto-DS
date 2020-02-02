@@ -21,8 +21,8 @@ public class Vendedor extends Persona{
     }
     
 
-    public String getNomber() {
-        return nomber;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getApellido() {
@@ -58,7 +58,7 @@ public class Vendedor extends Persona{
     }
 
     public void setNomber(String nomber) {
-        this.nomber = nomber;
+        this.nombre = nomber;
     }
 
     public void setApellido(String apellido) {

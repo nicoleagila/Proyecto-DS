@@ -3,22 +3,21 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="paneChooseAcabados" prefHeight="590.0" prefWidth="730.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controlador.diseno.AddAcabadosFXMLController">
+<AnchorPane id="AnchorPane" fx:id="paneChooseAcabados" prefHeight="590.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.diseno.AddAcabadosFXMLController">
    <children>
-      <Label fx:id="lbltitulo" layoutX="246.0" layoutY="22.0" text="Disene su casa">
+      <Label fx:id="lbltitulo" alignment="CENTER" layoutX="27.0" layoutY="22.0" prefHeight="54.0" prefWidth="682.0" text="Diseñe su propia casa">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
       <ImageView fx:id="imgviewcasa" fitHeight="236.0" fitWidth="331.0" layoutX="26.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="lblnombrecasa" layoutX="153.0" layoutY="86.0" text="casa:">
+      <Label fx:id="lblnombrecasa" alignment="CENTER" layoutX="31.0" layoutY="86.0" prefHeight="49.0" prefWidth="331.0" text="casa:">
          <font>
             <Font size="33.0" />
          </font>
@@ -36,14 +35,18 @@
       <Label fx:id="valorbase" layoutX="127.0" layoutY="530.0" prefHeight="39.0" prefWidth="62.0" text="\$$" />
       <Label fx:id="valorfinal" layoutX="294.0" layoutY="530.0" prefHeight="39.0" prefWidth="62.0" text="\$$" />
       <Accordion layoutX="392.0" layoutY="143.0" />
-      <ListView fx:id="listvaracteristicas" layoutX="26.0" layoutY="371.0" prefHeight="145.0" prefWidth="331.0" />
-      <VBox fx:id="paneopcionesacabados" layoutX="377.0" layoutY="134.0" prefHeight="382.0" prefWidth="324.0" />
-      <Label fx:id="lblacabados" layoutX="467.0" layoutY="86.0" text="acabados:">
+      <VBox fx:id="paneopcionesacabados" layoutX="377.0" layoutY="146.0" prefHeight="370.0" prefWidth="395.0" />
+      <Label fx:id="lblacabados" alignment="CENTER" layoutX="380.0" layoutY="86.0" prefHeight="49.0" prefWidth="395.0" text="Acabados:">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
-      <Button fx:id="btguardar" layoutX="448.0" layoutY="530.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="91.0" text="Guardar" />
-      <Button fx:id="btenviar" layoutX="574.0" layoutY="530.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="84.0" text="Enviar" />
+      <Button fx:id="btguardar" layoutX="474.0" layoutY="530.0" mnemonicParsing="false" onAction="#guardarDiseno" prefHeight="39.0" prefWidth="91.0" text="Guardar" />
+      <Button fx:id="btenviar" layoutX="604.0" layoutY="530.0" mnemonicParsing="false" onAction="#enviarDiseno" prefHeight="39.0" prefWidth="84.0" text="Enviar" />
+      <HBox fx:id="listvaracteristicas" layoutX="23.0" layoutY="386.0" prefHeight="130.0" prefWidth="324.0">
+         <children>
+            <VBox fx:id="listvaracteristicas1" prefHeight="130.0" prefWidth="326.0" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

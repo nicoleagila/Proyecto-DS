@@ -54,12 +54,11 @@ public class Casa implements ICasa {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
-    
+
     
     @Override
-    public void agregarAcabado() {
+    public void agregarAcabado(int cantidad) {
+        System.out.println("Agregando ".concat(Integer.toString(cantidad)).concat(" acabados..."));
         
     }
 

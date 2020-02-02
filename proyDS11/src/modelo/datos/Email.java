@@ -17,5 +17,20 @@ public class Email {
         this.usuario=usuario;
         this.dominio=dominio;
     }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getDominio() {
+        return dominio;
+    }
+
+    @Override
+    public String toString() {
+        return usuario +dominio;
+    }
+    
+    
     
 }

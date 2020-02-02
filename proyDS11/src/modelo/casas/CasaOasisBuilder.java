@@ -40,7 +40,7 @@ public class CasaOasisBuilder extends CasaBuilder{
     @Override
     public void crearPatio() {
         c.setPatio(false);
-        c.setTamanoPatio(null);
+        c.setTamanoPatio(TamanoPatio.NADA);
     }
  
 }

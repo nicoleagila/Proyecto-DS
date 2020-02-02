@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.util.LinkedList;
 import modelo.datos.Direccion;
 import modelo.datos.Email;
 import modelo.datos.EstadoCivil;
@@ -20,18 +21,21 @@ public class Cliente extends Persona{
     private String nombreTrabajo;
     private String cargo;
     private int numeroHijos;
+    private LinkedList<Casa> disenos;
 
     public Cliente(Direccion direccionTrabajo, String nombreTrabajo, String cargo, int numeroHijos) {
         this.direccionTrabajo = direccionTrabajo;
         this.nombreTrabajo = nombreTrabajo;
         this.cargo = cargo;
         this.numeroHijos = numeroHijos;
+        this.registrado=false;
+        this.disenos= new LinkedList<>();
     }
 
     public Cliente() {
+        this.registrado=false;
+        this.disenos= new LinkedList<>();
     }
-    
-    
 
     public Direccion getDireccionTrabajo() {
         return direccionTrabajo;
@@ -49,38 +53,46 @@ public class Cliente extends Persona{
         return numeroHijos;
     }
 
-    public String getNomber() {
-        return nomber;
+    public String getNombre() {
+        return nombre;
     }
 
+    @Override
     public String getApellido() {
         return apellido;
     }
 
+    @Override
     public Identificator getCI() {
         return CI;
     }
 
+    @Override
     public PhoneNumber getTelefono() {
         return telefono;
     }
 
+    @Override
     public Email getEmail() {
         return email;
     }
 
+    @Override
     public Direccion getDireccionCasa() {
         return direccionCasa;
     }
 
+    @Override
     public PhoneNumber getTelefonoTrabajo() {
         return telefonoTrabajo;
     }
 
+    @Override
     public EstadoCivil getEstadoCivil() {
         return estadoCivil;
     }
 
+    @Override
     public boolean isActivo() {
         return activo;
     }
@@ -102,7 +114,7 @@ public class Cliente extends Persona{
     }
 
     public void setNomber(String nomber) {
-        this.nomber = nomber;
+        this.nombre = nomber;
     }
 
     public void setApellido(String apellido) {
@@ -136,6 +148,23 @@ public class Cliente extends Persona{
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    public boolean isRegistrado() {
+        return registrado;
+    }
+
+    public void setRegistrado(boolean registrado) {
+        this.registrado = registrado;
+    }
+
+    public LinkedList<Casa> getDisenos() {
+        return disenos;
+    }
+
+    public void setDisenos(LinkedList<Casa> disenos) {
+        this.disenos = disenos;
+    }
+    
     
     
 }

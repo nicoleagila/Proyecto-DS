@@ -7,6 +7,7 @@ package modelo.casas;
 
 import modelo.Casa;
 import modelo.datos.Orientacion;
+import modelo.datos.TamanoPatio;
 
 /**
  *
@@ -38,8 +39,8 @@ public class CasaParaisoBuilder extends CasaBuilder{
 
     @Override
     public void crearPatio() {
-        c.setPatio(false);
-        c.setTamanoPatio(null);
+        c.setPatio(true);
+        c.setTamanoPatio(TamanoPatio.PEQUENO);
     }
 
 }

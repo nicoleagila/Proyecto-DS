@@ -5,6 +5,8 @@
  */
 package modelo.casas;
 
+import modelo.Casa;
+
 /**
  *
  * @author nicoleagila
@@ -23,8 +25,8 @@ public class CasaDirector {
         builder.crearPatio();
     }
 
-    public CasaBuilder getBuilder() {
-        return builder;
+    public Casa getCasa() {
+        return builder.getC();
     }
     
     
