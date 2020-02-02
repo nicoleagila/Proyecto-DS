@@ -23,5 +23,5 @@ public class QuioscoFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
 }

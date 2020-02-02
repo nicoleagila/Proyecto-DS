@@ -5,11 +5,18 @@
  */
 package controlador;
 
+import controlador.diseno.EscogerCasaBaseFXMLController;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
@@ -21,7 +28,8 @@ import modelo.Cuenta;
 import modelo.MyHome;
 import static modelo.MyHome.persona;
 import modelo.Vendedor;
-import sun.security.util.Password;
+import static myhome.MyHome.stPrincipal;
+//import sun.security.util.Password;
 
 /**
  * FXML Controller class
@@ -51,13 +59,34 @@ public class LoginFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if(persona instanceof Administrador) btnDesign.setVisible(false);
+        if(persona instanceof Vendedor) btnDesign.setVisible(false);
         if(!(persona instanceof Cliente)) checkboxClientenuevo.setVisible(false);
         
     }    
 
     @FXML
-    private void ingreso(ActionEvent event) {
-        if(validarCuenta()) MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);
+    private void ingreso(ActionEvent event) throws IOException {
+        if(validarCuenta()) {MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);}
+        Parent rootUsuarios = null;
+        if(persona instanceof Administrador){
+            
+        };
+        if(persona instanceof Vendedor){
+            try {
+            rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/VendedorInterfaz.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        };
+        if(persona instanceof Cliente){
+        try {
+            rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/ClienteInterfaz.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+        };
+        stPrincipal.setScene(new Scene(rootUsuarios));
+        stPrincipal.show();
         
     }
 
