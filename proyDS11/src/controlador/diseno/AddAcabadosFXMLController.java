@@ -225,7 +225,6 @@ public class AddAcabadosFXMLController implements Initializable {
             insertDiseno();
         }else {
             registroPrevio();
-        //if(!STAUXILIAR.isShowing()) 
         }
         
     }

@@ -50,7 +50,7 @@ public class ClienteInterfazController implements Initializable {
         try {
             rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/ClientePerfil.fxml"));
         } catch (IOException ex) {
-            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteInterfazController.class.getName()).log(Level.SEVERE, null, ex);
         }
         STPRINCIPAL.setScene(new Scene(rootUsuarios));
         STPRINCIPAL.show();
@@ -58,7 +58,14 @@ public class ClienteInterfazController implements Initializable {
 
     @FXML
     private void verDiseños(ActionEvent event) {
-        
+        Parent rootDiseno = null;
+        try {
+            rootDiseno = FXMLLoader.load(getClass().getResource("/vistas/diseno/EscogerCasaBaseFXML.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        STPRINCIPAL.setScene(new Scene(rootDiseno));
+        STPRINCIPAL.show();
     }
 
     @FXML
