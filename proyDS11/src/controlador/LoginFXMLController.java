@@ -69,7 +69,11 @@ public class LoginFXMLController implements Initializable {
         if(validarCuenta()) {MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);}
         Parent rootUsuarios = null;
         if(persona instanceof Administrador){
-            
+            try {
+            rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/AdministradorInterfaz.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         };
         if(persona instanceof Vendedor){
             try {

@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/diseno/AddAcabadosFXMLController.java</file>
-            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/myhome/MyHome.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/UsuariosFXMLController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/ClienteController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/AdministradorInterfazFXMLController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/modelo/DisenoPDF.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/diseno/EscogerCasaBaseFXMLController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/VendedorInterfazController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/VendedorPerfilController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/LoginFXMLController.java</file>
+            <file>file:/C:/Users/josse/OneDrive/Documents/CCUSA/New%20folder/Proyecto-DS/proyDS11/src/controlador/VendedorFXMLController.java</file>
         </group>
     </open-files>
 </project-private>
