@@ -2,6 +2,27 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/MyHome.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/diseno/AddAcabadosFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/diseno/EscogerCasaBaseFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/auxiliares/NoRegistradoFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/UsuariosFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/DisenoPDF.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/Cliente.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/acabados/AislanteTermico.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/VendedorPerfilController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/ReportePDF.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/Casa.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/OficinaFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/GoogleMail.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/ClienteInterfazController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/LoginFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/QuioscoFXMLController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/ClienteController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/modelo/database/Conexion.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/controlador/VendedorInterfazController.java</file>
+            <file>file:/C:/Users/nicoleagila/OneDrive%20-%20Escuela%20Superior%20Politécnica%20del%20Litoral/ESPOL/5s/Diseno%20Software/Proyecto/Proyecto-DS/proyDS11/src/vistas/Cliente.fxml</file>
+        </group>
     </open-files>
 </project-private>

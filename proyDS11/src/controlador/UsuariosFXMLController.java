@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import controlador.diseno.AddAcabadosFXMLController;
 import controlador.diseno.EscogerCasaBaseFXMLController;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -40,19 +39,19 @@ public class UsuariosFXMLController {
 
     @FXML
     private void loginCliente(ActionEvent event) {
-        MyHome.persona = new Cliente();
+        MyHome.setPersona(new Cliente());
         pasarLogin();
     }
 
     @FXML
     private void loginVend(ActionEvent event) {
-        MyHome.persona = new Vendedor();
+        MyHome.setPersona(new Vendedor());
         pasarLogin();
     }
 
     @FXML
     private void loginAdmin(ActionEvent event) {
-        MyHome.persona = new Administrador();
+        MyHome.setPersona(new Administrador());
         pasarLogin();
     }
     private void pasarLogin(){

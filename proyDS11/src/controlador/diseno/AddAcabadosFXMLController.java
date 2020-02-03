@@ -24,8 +24,7 @@ import javafx.scene.layout.VBox;
 import modelo.Casa;
 import modelo.Cliente;
 import modelo.DisenoPDF;
-import static modelo.MyHome.cuenta;
-import static modelo.MyHome.persona;
+import modelo.MyHome;
 import modelo.acabados.Acabado;
 import modelo.acabados.AislanteTermico;
 import modelo.acabados.BanoSincronizado;
@@ -69,7 +68,7 @@ public class AddAcabadosFXMLController implements Initializable {
     @FXML
     private VBox listvaracteristicas1;
     static Casa casaescogida;
-    static final Cliente CLIENTE = (Cliente) persona;
+    static final Cliente CLIENTE = (Cliente) MyHome.getPersona();
 
     /**
      * Initializes the controller class.
@@ -184,7 +183,7 @@ public class AddAcabadosFXMLController implements Initializable {
         if(check.isSelected()){
             s.setVisible(true);
             s.getValueFactory().setValue(1);
-            //acabado.agregarAcabado(s.getValue());
+            acabado.agregarAcabado(s.getValue());
             
             if(CLIENTE.isRegistrado()){
                 precio.setVisible(true);
@@ -209,7 +208,7 @@ public class AddAcabadosFXMLController implements Initializable {
         if(CLIENTE.isRegistrado()){
             CLIENTE.getDisenos().add(casaescogida);
         }else {
-            System.out.println("No se ha registrado");
+            
         }
         
     }
@@ -217,10 +216,9 @@ public class AddAcabadosFXMLController implements Initializable {
     @FXML
     private void enviarDiseno(ActionEvent event) {
         if(CLIENTE.isRegistrado()){
-            DisenoPDF diseno = new DisenoPDF(casaescogida,cuenta);
+            DisenoPDF diseno = new DisenoPDF(casaescogida,MyHome.getCuenta());
             diseno.enviarPDF();
         }else {
-            System.out.println("No esta registrado");
         }
     }
 

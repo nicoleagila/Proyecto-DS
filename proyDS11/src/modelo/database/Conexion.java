@@ -6,6 +6,8 @@
 package modelo.database;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,7 +16,7 @@ import java.sql.*;
 public class Conexion  {
     private static Conexion instance = new Conexion();
     private Connection conexion;
-
+    
     private Conexion() {
         Connection con = null;
         String url = "jdbc:mysql://192.168.99.100:3308/MyHomeDataBase";
@@ -24,10 +26,10 @@ public class Conexion  {
             con = DriverManager.getConnection(url, user, pass);
             this.conexion= con;
         } catch (SQLException ex) {
-            System.out.println("Error en conexion "+ex.getMessage());
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, "Error en conexion "+ex.getMessage());
             this.conexion=null;
         }
-        System.out.println("Conexion existosa");
+        Logger.getLogger(Conexion.class.getName()).log(Level.FINE, null,"Conexion existosa");
     }
 
     public Connection getConexion() {

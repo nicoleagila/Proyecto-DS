@@ -25,7 +25,7 @@ import modelo.Administrador;
 import modelo.Cliente;
 import modelo.Cuenta;
 import modelo.MyHome;
-import static modelo.MyHome.persona;
+import modelo.Persona;
 import modelo.Vendedor;
 import static myhome.MyHome.STPRINCIPAL;
 /**
@@ -47,6 +47,8 @@ public class LoginFXMLController implements Initializable {
     private CheckBox checkboxClientenuevo;
     @FXML
     private PasswordField txtpass;
+    private final Persona PERSONA = MyHome.getPersona();
+    private Cuenta cuenta = MyHome.getCuenta();
     
     
 
@@ -57,30 +59,30 @@ public class LoginFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(persona instanceof Administrador) btnDesign.setVisible(false);
-        if(persona instanceof Vendedor) btnDesign.setVisible(false);
-        if(!(persona instanceof Cliente)) checkboxClientenuevo.setVisible(false);
+        if(PERSONA instanceof Administrador) btnDesign.setVisible(false);
+        if(PERSONA instanceof Vendedor) btnDesign.setVisible(false);
+        if(!(PERSONA instanceof Cliente)) checkboxClientenuevo.setVisible(false);
         
     }    
 
     @FXML
     private void ingreso(ActionEvent event) throws IOException {
         if(validarCuenta()) {
-            MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);
-            persona.setRegistrado(true);
+            cuenta = new Cuenta(txtuser.getText(),txtpass.getText(),PERSONA);
+            PERSONA.setRegistrado(true);
         }
         Parent rootUsuarios = null;
-        if(persona instanceof Administrador){
+        if(PERSONA instanceof Administrador){
             
         }
-        if(persona instanceof Vendedor){
+        if(PERSONA instanceof Vendedor){
             try {
                 rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/VendedorInterfaz.fxml"));
             } catch (IOException ex) {
                 Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if(persona instanceof Cliente){
+        if(PERSONA instanceof Cliente){
             try {
                 rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/ClienteInterfaz.fxml"));
             } catch (IOException ex) {

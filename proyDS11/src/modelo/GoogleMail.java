@@ -33,7 +33,7 @@ public class GoogleMail {
     }
     
     public void enviarMail(String receptor, String contenido, String source) throws AddressException, MessagingException {
-        System.out.println("Generando correo de confirmacion.");
+        Logger.getLogger(GoogleMail.class.getName()).log(Level.FINE, null, "Generando correo de confirmacion.");
         Properties props = new Properties();
         
         props.put("mail.smtp.auth", "true");
@@ -53,7 +53,7 @@ public class GoogleMail {
         
         Message message=prepararMensaje(sesion, myEmail, receptor,source, contenido);
         Transport.send(message);
-        System.out.println("Bot: Correo enviado exitosamente!!");
+        Logger.getLogger(GoogleMail.class.getName()).log(Level.FINE, null, "Correo enviado exitosamente!!");
         
     }
 

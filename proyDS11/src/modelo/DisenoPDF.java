@@ -14,6 +14,8 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.*; 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -30,13 +32,14 @@ public class DisenoPDF extends PDF{
     
     @Override
     public void escribirPDF(File pdfNewFile){
-        try {
-            Document document = new Document();
+        try{
+            Document document = null;
             try {
+                document = new Document();
                 PdfWriter.getInstance(document, new FileOutputStream(pdfNewFile));
 
             } catch (FileNotFoundException fileNotFoundException) {
-                System.out.println("(No se encontró el fichero para generar el pdf)" + fileNotFoundException);
+                Logger.getLogger(DisenoPDF.class.getName()).log(Level.SEVERE, null, "(No se encontró el fichero para generar el pdf)" + fileNotFoundException);
             }
             document.open();
             
@@ -54,7 +57,7 @@ public class DisenoPDF extends PDF{
                 image.setAbsolutePosition(2, 150);
                 chapter.add(image);
             } catch (IOException ex) {
-                System.out.println("Image IOException " +  ex);
+                Logger.getLogger(DisenoPDF.class.getName()).log(Level.SEVERE, null, "Image IOException: " +  ex);
             }
             Paragraph parrafo= new Paragraph();
             parrafo.add("Numero de banos: ".concat(Integer.toString(casa.getNumBanos())));
@@ -68,9 +71,10 @@ public class DisenoPDF extends PDF{
             chapter.add(parrafo);
             document.add(chapter);
             document.close();
-            System.out.println("El reporte se ha generado!");
+            
+            Logger.getLogger(DisenoPDF.class.getName()).log(Level.FINE, null, "El reporte se ha generado!");
         } catch (DocumentException documentException) {
-            System.out.println("Se ha producido un error al generar un documento: " + documentException);
+            Logger.getLogger(DisenoPDF.class.getName()).log(Level.SEVERE, null, "Se ha producido un error al generar un documento: " + documentException);
         }
     } 
 
@@ -81,9 +85,4 @@ public class DisenoPDF extends PDF{
         return path;
     }
 
-    @Override
-    public void enviarPDF() {
-        super.enviarPDF();
-    }
-    
 }

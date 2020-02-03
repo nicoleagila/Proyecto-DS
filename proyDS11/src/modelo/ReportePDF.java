@@ -17,6 +17,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static modelo.PDF.CHAPTERFONT;
 
 /**
@@ -29,11 +31,6 @@ public class ReportePDF extends PDF{
     public ReportePDF(Casa casa, Cuenta c, Cuenta vendedor) {
         super(casa, c);
         this.vendedor=vendedor;
-    }
-
-    @Override
-    public void enviarPDF() {
-        super.enviarPDF();
     }
 
     @Override
@@ -51,7 +48,7 @@ public class ReportePDF extends PDF{
                 PdfWriter.getInstance(document, new FileOutputStream(pdfNewFile));
 
             } catch (FileNotFoundException fileNotFoundException) {
-                System.out.println("(No se encontró el fichero para generar el pdf)" + fileNotFoundException);
+                Logger.getLogger(ReportePDF.class.getName()).log(Level.SEVERE, null, "(No se encontró el fichero para generar el pdf)" + fileNotFoundException);
             }
             document.open();
             
@@ -67,7 +64,7 @@ public class ReportePDF extends PDF{
                 image.setAbsolutePosition(2, 150);
                 chapter.add(image);
             } catch (IOException ex) {
-                System.out.println("Image IOException " +  ex);
+                Logger.getLogger(ReportePDF.class.getName()).log(Level.SEVERE, null, "Image IOException " + ex);
             }
             Paragraph parrafo= new Paragraph();
             parrafo.add(casa.getNombre());
@@ -83,9 +80,9 @@ public class ReportePDF extends PDF{
             chapter.add(parrafo);
             document.add(chapter);
             document.close();
-            System.out.println("El reporte se ha generado!");
+            Logger.getLogger(ReportePDF.class.getName()).log(Level.FINE, null, "El reporte se ha generado!");
         } catch (DocumentException documentException) {
-            System.out.println("Se ha producido un error al generar un documento: " + documentException);
+            Logger.getLogger(ReportePDF.class.getName()).log(Level.SEVERE, null, "Se ha producido un error al generar un documento: " + documentException);
         }
     }
     

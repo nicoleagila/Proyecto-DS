@@ -5,7 +5,12 @@
  */
 package modelo;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedList;
+import javafx.collections.ObservableList;
 import modelo.datos.Direccion;
 import modelo.datos.Email;
 import modelo.datos.EstadoCivil;
@@ -17,11 +22,21 @@ import modelo.datos.PhoneNumber;
  * @author nicoleagila
  */
 public class Cliente extends Persona{
+    private int identificador;
+    private String direccionS; 
     private Direccion direccionTrabajo;
     private String nombreTrabajo;
     private String cargo;
     private int numeroHijos;
     private LinkedList<Casa> disenos;
+
+    public Cliente(int identificador,String direccionTrabajo, String nombreTrabajo, String cargo, int numeroHijos) {        
+        this.identificador=identificador;
+        this.direccionS = direccionTrabajo;
+        this.nombreTrabajo = nombreTrabajo;
+        this.cargo = cargo;
+        this.numeroHijos = numeroHijos;
+    }
 
     public Cliente(Direccion direccionTrabajo, String nombreTrabajo, String cargo, int numeroHijos) {
         this.direccionTrabajo = direccionTrabajo;
@@ -29,7 +44,11 @@ public class Cliente extends Persona{
         this.cargo = cargo;
         this.numeroHijos = numeroHijos;
         this.registrado=false;
-        this.disenos= new LinkedList<>();
+        this.disenos = new LinkedList<>();
+    }
+    
+    public void setID(int id){
+        this.identificador=id;
     }
 
     public Cliente() {
@@ -165,6 +184,23 @@ public class Cliente extends Persona{
         this.disenos = disenos;
     }
     
+    public static void llenarTabla(Connection con, ObservableList<Cliente> lista) throws SQLException{
+        
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Cliente");
+            while(rs.next()){
+                Cliente c;
+                c = new Cliente(rs.getInt("identificador"),
+                        rs.getString("direccion_trabajo"),
+                        rs.getString("empresa_trabajo"),
+                        rs.getString("cargo"),
+                        rs.getInt("nHijos")               
+                );
+               
+                lista.add(c);
+                
+            }
+    }
     
     
 }

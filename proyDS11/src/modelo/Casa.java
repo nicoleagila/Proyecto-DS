@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.util.LinkedList;
 import java.util.List;
 import modelo.acabados.Acabado;
 import modelo.acabados.ICasa;
@@ -29,7 +30,7 @@ public class Casa implements ICasa {
     protected List<Acabado> acabados;
     protected float costoFinal;
 
-    public Casa(int id,String nombre, double metrosCuadrados, int numeroPisos, boolean esquinera, Orientacion orientacion, boolean patio, TamanoPatio tamanoPatio, int numHabitaciones, int numBanos, List<Acabado> acabados, float costoFinal) {
+    public Casa(int id,String nombre, double metrosCuadrados, int numeroPisos, boolean esquinera, Orientacion orientacion, boolean patio, TamanoPatio tamanoPatio, int numHabitaciones, int numBanos, float costoFinal) {
         this.id=id;
         this.nombre = nombre;
         this.metrosCuadrados = metrosCuadrados;
@@ -40,11 +41,12 @@ public class Casa implements ICasa {
         this.tamanoPatio = tamanoPatio;
         this.numHabitaciones = numHabitaciones;
         this.numBanos = numBanos;
-        this.acabados = acabados;
+        this.acabados = new LinkedList<>();
         this.costoFinal = costoFinal;
     }
 
     public Casa() {
+        this.acabados = new LinkedList<>();
     }
 
     public int getId() {
@@ -58,7 +60,7 @@ public class Casa implements ICasa {
     
     @Override
     public void agregarAcabado(int cantidad) {
-        System.out.println("Agregando ".concat(Integer.toString(cantidad)).concat(" acabados..."));
+        System.out.println("Agregando ".concat(Integer.toString(cantidad)).concat(" acabados...")); 
         
     }
 
