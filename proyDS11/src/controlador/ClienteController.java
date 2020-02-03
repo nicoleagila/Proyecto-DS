@@ -9,8 +9,6 @@ import controlador.diseno.EscogerCasaBaseFXMLController;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -26,14 +24,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import modelo.Administrador;
 import modelo.Cliente;
-
-import modelo.Vendedor;
 import modelo.database.Conexion;
-import modelo.datos.Direccion;
 import static myhome.MyHome.STPRINCIPAL;
 
 /**
@@ -72,17 +65,13 @@ public class ClienteController implements Initializable {
         Connection k = con.getConexion();
         cliente=FXCollections.observableArrayList();
         Cliente c= new Cliente();
-        try {
-            c.llenarTabla(k, cliente);
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Cliente.llenarTabla(k, cliente);
         Tabla.setItems(cliente);
-        id.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("identificador"));
-        trabajo.setCellValueFactory(new PropertyValueFactory<Cliente, String>("empresa_trabajo"));
-        D_t.setCellValueFactory(new PropertyValueFactory<Cliente, String>("direccion_trabajo"));
-        cargo.setCellValueFactory(new PropertyValueFactory<Cliente, String>("cargo"));
-        hijos.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("nHijos"));
+        id.setCellValueFactory(new PropertyValueFactory<>("identificador"));
+        trabajo.setCellValueFactory(new PropertyValueFactory<>("empresa_trabajo"));
+        D_t.setCellValueFactory(new PropertyValueFactory<>("direccion_trabajo"));
+        cargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
+        hijos.setCellValueFactory(new PropertyValueFactory<>("nHijos"));
     }    
     @FXML
     private void back(ActionEvent event) {

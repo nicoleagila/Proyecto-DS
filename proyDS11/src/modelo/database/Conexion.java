@@ -21,9 +21,8 @@ public class Conexion  {
         Connection con = null;
         String url = "jdbc:mysql://192.168.99.100:3308/MyHomeDataBase";
         String user= "root";
-        String pass= "root";
         try {
-            con = DriverManager.getConnection(url, user, pass);
+            con = DriverManager.getConnection(url, user, this.passw());
             this.conexion= con;
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, "Error en conexion "+ex.getMessage());
@@ -38,6 +37,10 @@ public class Conexion  {
 
     public static Conexion getInstance(){
         return instance;
+    }
+    
+    private String passw(){
+        return "root";
     }
     
 }

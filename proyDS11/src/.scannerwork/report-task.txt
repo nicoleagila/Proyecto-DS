@@ -1,6 +1,6 @@
-projectKey=nagila2019:proyDS11.3
+projectKey=nagila2019:proyDS11.7
 serverUrl=http://200.126.12.164
 serverVersion=6.7.6.38781
-dashboardUrl=http://200.126.12.164/dashboard/index/nagila2019:proyDS11.3
-ceTaskId=AXAJOEVJn2b0NoJj1O-w
-ceTaskUrl=http://200.126.12.164/api/ce/task?id=AXAJOEVJn2b0NoJj1O-w
+dashboardUrl=http://200.126.12.164/dashboard/index/nagila2019:proyDS11.7
+ceTaskId=AXAMz9RCpmDgQnY_IhGb
+ceTaskUrl=http://200.126.12.164/api/ce/task?id=AXAMz9RCpmDgQnY_IhGb

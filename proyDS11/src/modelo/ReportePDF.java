@@ -71,7 +71,7 @@ public class ReportePDF extends PDF{
             parrafo.add("Numero de banos: ".concat(Integer.toString(casa.getNumBanos())));
             parrafo.add("Numero de habitaciones: ".concat(Integer.toString(casa.getNumHabitaciones())));
             parrafo.add("Numero de pisos: ".concat(Integer.toString(casa.getNumeroPisos())));
-            casa.getAcabados().forEach((a) -> {
+            casa.getAcabados().forEach(a -> {
                 parrafo.add("ACABADOS:");
                 parrafo.add("> ".concat(a.getNombre()));
             });

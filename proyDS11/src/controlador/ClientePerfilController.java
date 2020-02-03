@@ -23,7 +23,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import modelo.MyHome;
 import modelo.database.Conexion;
 import static myhome.MyHome.STPRINCIPAL;
 
@@ -81,12 +80,15 @@ public class ClientePerfilController implements Initializable {
     }
 
     @FXML
-    private void save(ActionEvent event) throws SQLException {
+    private void save(ActionEvent event)  {
         Conexion c = Conexion.getInstance();
         Connection bd= c.getConexion();
         String queryReg = "INSERT INTO Usuarios values("+id_c.getText()+nombre.getText()+apellido.getText()+numero_c.getText()+email.getText()+direccion_d.getText()+numero_t.getText()+estadocivil.getValue()+"\")";
-        PreparedStatement pst = MyHome.getBD().prepareStatement(queryReg);
-        pst.execute();
+        try(PreparedStatement pst = bd.prepareStatement(queryReg)){
+            pst.execute();
+        }catch(SQLException ex){
+            
+        }
     }
     
 }

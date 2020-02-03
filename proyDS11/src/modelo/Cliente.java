@@ -184,20 +184,27 @@ public class Cliente extends Persona{
         this.disenos = disenos;
     }
     
-    public static void llenarTabla(Connection con, ObservableList<Cliente> lista) throws SQLException{
+    public static void llenarTabla(Connection con, ObservableList<Cliente> lista){
         
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Cliente");
-            while(rs.next()){
-                Cliente c;
-                c = new Cliente(rs.getInt("identificador"),
-                        rs.getString("direccion_trabajo"),
-                        rs.getString("empresa_trabajo"),
-                        rs.getString("cargo"),
-                        rs.getInt("nHijos")               
-                );
-               
-                lista.add(c);
+            try(Statement stmt = con.createStatement()){
+                try(ResultSet rs = stmt.executeQuery("SELECT * FROM Cliente")){
+                while(rs.next()){
+                    Cliente c;
+                    c = new Cliente(rs.getInt("identificador"),
+                            rs.getString("direccion_trabajo"),
+                            rs.getString("empresa_trabajo"),
+                            rs.getString("cargo"),
+                            rs.getInt("nHijos")               
+                    );
+
+                    lista.add(c);
+
+                }
+                }catch(SQLException es){
+                    
+                }
+            }
+            catch(SQLException es){
                 
             }
     }

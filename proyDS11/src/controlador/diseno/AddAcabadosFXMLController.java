@@ -236,7 +236,7 @@ public class AddAcabadosFXMLController implements Initializable {
             DisenoPDF diseno = new DisenoPDF(casaescogida,MyHome.getCuenta());
             diseno.enviarPDF();
         }else {
-            System.out.println("mandarlo a registrar y cuando ponga aceptar enviar");
+            registroPrevio();
         }
     }
     
