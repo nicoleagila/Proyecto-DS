@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import controlador.diseno.EscogerCasaBaseFXMLController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,9 +27,7 @@ import modelo.Cuenta;
 import modelo.MyHome;
 import static modelo.MyHome.persona;
 import modelo.Vendedor;
-import static myhome.MyHome.stPrincipal;
-//import sun.security.util.Password;
-
+import static myhome.MyHome.STPRINCIPAL;
 /**
  * FXML Controller class
  *
@@ -55,6 +52,8 @@ public class LoginFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,31 +65,39 @@ public class LoginFXMLController implements Initializable {
 
     @FXML
     private void ingreso(ActionEvent event) throws IOException {
-        if(validarCuenta()) {MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);}
+        if(validarCuenta()) {
+            MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);
+            persona.setRegistrado(true);
+        }
         Parent rootUsuarios = null;
         if(persona instanceof Administrador){
+<<<<<<< HEAD
             try {
             rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/AdministradorInterfaz.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
         };
+=======
+            
+        }
+>>>>>>> 5a6d30ebb8dc571a8ea502144258c9829addf76d
         if(persona instanceof Vendedor){
             try {
-            rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/VendedorInterfaz.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+                rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/VendedorInterfaz.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        };
         if(persona instanceof Cliente){
-        try {
-            rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/ClienteInterfaz.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(EscogerCasaBaseFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-        }       
-        };
-        stPrincipal.setScene(new Scene(rootUsuarios));
-        stPrincipal.show();
+            try {
+                rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/ClienteInterfaz.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            }       
+            }
+        STPRINCIPAL.setScene(new Scene(rootUsuarios));
+        STPRINCIPAL.show();
         
     }
 
@@ -101,7 +108,15 @@ public class LoginFXMLController implements Initializable {
     
     @FXML
     private void disenoRapido(ActionEvent event) {
-        
+        Parent rootDisenoRapido = null;
+        try {
+            rootDisenoRapido = FXMLLoader.load(getClass().getResource("/vistas/diseno/EscogerCasaBaseFXML.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+        STPRINCIPAL.setScene(new Scene(rootDisenoRapido));
+        STPRINCIPAL.show();
     }
+    
     
 }
