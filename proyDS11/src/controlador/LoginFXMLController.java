@@ -73,9 +73,16 @@ public class LoginFXMLController implements Initializable {
         }
         Parent rootUsuarios = null;
         if(PERSONA instanceof Administrador){
-            
+            try {
+            rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/AdministradorInterfaz.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        };
+           
+
         if(PERSONA instanceof Vendedor){
+
             try {
                 rootUsuarios = FXMLLoader.load(getClass().getResource("/vistas/VendedorInterfaz.fxml"));
             } catch (IOException ex) {

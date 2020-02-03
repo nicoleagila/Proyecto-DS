@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.VendedorFXMLController">
+   <children>
+      <TableView fx:id="tableVendedor" layoutX="14.0" layoutY="14.0" prefHeight="108.0" prefWidth="586.0">
+        <columns>
+          <TableColumn prefWidth="75.0" />
+          <TableColumn prefWidth="75.0" />
+            <TableColumn prefWidth="75.0" />
+            <TableColumn prefWidth="75.0" />
+            <TableColumn prefWidth="75.0" />
+            <TableColumn prefWidth="75.0" />
+            <TableColumn prefWidth="75.0" />
+        </columns>
+      </TableView>
+      <HBox layoutX="14.0" layoutY="132.0" prefHeight="43.0" prefWidth="601.0">
+         <children>
+            <Label text="C.I: " />
+            <TextField fx:id="txtciV" />
+            <Label text="   Nombre: " />
+            <TextField fx:id="textnomV" />
+            <Label text="   Apellido:" />
+            <TextField fx:id="textapeV" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="175.0" prefHeight="60.0" prefWidth="586.0">
+         <children>
+            <Label text="Cargo:  " />
+            <ChoiceBox fx:id="cbCargoV" prefWidth="150.0" />
+            <Label text="          Dirección de domicilio:   " />
+            <TextField fx:id="textDirV" prefHeight="29.0" prefWidth="227.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="15.0" layoutY="217.0" prefHeight="53.0" prefWidth="586.0">
+         <children>
+            <Label text="Teléfono de trabajo:     " />
+            <TextField fx:id="textTrabajV" />
+            <Label text="            Teléfono celular :     " />
+            <TextField fx:id="textCelV" prefHeight="24.0" prefWidth="163.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="15.0" layoutY="256.0" prefHeight="60.0" prefWidth="586.0">
+         <children>
+            <Label text="Estado civil:   " />
+            <ChoiceBox fx:id="cbCivilV" prefWidth="150.0" />
+            <Label text="            Correo electrónico:    " />
+            <TextField fx:id="textCorV" prefHeight="28.0" prefWidth="207.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="11.0" layoutY="295.0" prefHeight="70.0" prefWidth="302.0">
+         <children>
+            <Button fx:id="btnAtrasV" mnemonicParsing="false" text="Atrás" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="299.0" layoutY="295.0" prefHeight="70.0" prefWidth="302.0">
+         <children>
+            <Button fx:id="textConsultV" mnemonicParsing="false" text="Consultar" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
