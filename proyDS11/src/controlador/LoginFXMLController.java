@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import controlador.diseno.EscogerCasaBaseFXMLController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -66,7 +65,10 @@ public class LoginFXMLController implements Initializable {
 
     @FXML
     private void ingreso(ActionEvent event) throws IOException {
-        if(validarCuenta()) {MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);}
+        if(validarCuenta()) {
+            MyHome.cuenta=new Cuenta(txtuser.getText(),txtpass.getText(),MyHome.persona);
+            persona.setRegistrado(true);
+        }
         Parent rootUsuarios = null;
         if(persona instanceof Administrador){
             
