@@ -5,9 +5,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="288.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VendedorInterfazController">
    <children>
-      <Button layoutX="54.0" layoutY="132.0" mnemonicParsing="false" onAction="#verPerfil" text="Perfil" />
-      <Button layoutX="160.0" layoutY="132.0" mnemonicParsing="false" onAction="#verClientes" text="Clientes" />
+      <Button fx:id="Perfil" layoutX="168.0" layoutY="132.0" mnemonicParsing="false" onAction="#verPerfil" text="Perfil" />
+      <Button fx:id="btn_clien" layoutX="55.0" layoutY="132.0" mnemonicParsing="false" onAction="#verClientes" text="Clientes" />
       <Button fx:id="btn_diseños" layoutX="264.0" layoutY="132.0" mnemonicParsing="false" onAction="#verDiseños" text="Diseños" />
       <Button layoutX="143.0" layoutY="239.0" mnemonicParsing="false" onAction="#menu" text="Cerrar Seccion" />
+      <Button fx:id="btn_admin" layoutX="24.0" layoutY="21.0" mnemonicParsing="false" onAction="#verVendedores" prefHeight="25.0" prefWidth="324.0" text="Administrar Vendedores" />
    </children>
 </AnchorPane>
+

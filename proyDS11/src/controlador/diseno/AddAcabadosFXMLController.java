@@ -5,12 +5,24 @@
  */
 package controlador.diseno;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -31,6 +43,8 @@ import modelo.acabados.BanoSincronizado;
 import modelo.acabados.Griferia;
 import modelo.acabados.Iluminacion;
 import modelo.acabados.Piso;
+import static myhome.MyHome.STAUXILIAR;
+import static myhome.MyHome.STPRINCIPAL;
 
 /**
  * FXML Controller class
@@ -204,22 +218,50 @@ public class AddAcabadosFXMLController implements Initializable {
     }
 
     @FXML
-    private void guardarDiseno(ActionEvent event) {
+    private void guardarDiseno(ActionEvent event) throws SQLException {
+        
         if(CLIENTE.isRegistrado()){
             CLIENTE.getDisenos().add(casaescogida);
+            insertDiseno();
         }else {
-            
+            registroPrevio();
+        //if(!STAUXILIAR.isShowing()) 
         }
         
     }
 
     @FXML
-    private void enviarDiseno(ActionEvent event) {
+    private void enviarDiseno(ActionEvent event) throws SQLException {
         if(CLIENTE.isRegistrado()){
+            insertDiseno();
             DisenoPDF diseno = new DisenoPDF(casaescogida,MyHome.getCuenta());
             diseno.enviarPDF();
         }else {
+            System.out.println("mandarlo a registrar y cuando ponga aceptar enviar");
+        }
+    }
+    
+    private void insertDiseno() throws SQLException{
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String fecha = dateFormat.format(date);  
+        int c=0;
+        String queryReg = "INSERT INTO cotizacion("+Integer.toString(c++)+ ",\""+CLIENTE.getCI()+"\","+ Integer.toString(casaescogida.getId())+","+Double.toString(casaescogida.getCostoFinal())+",\""+fecha+"\""+",\"activo\")";
+            System.out.println(queryReg);
+            PreparedStatement pst = MyHome.getBD().prepareStatement(queryReg);
+            pst.execute();
+    }
+    
+    private void registroPrevio(){
+        Parent rootRegistro = null;
+        try {
+            rootRegistro = FXMLLoader.load(getClass().getResource("/vistas/ClientePerfil.fxml"));
+        } catch (IOException ex) {
+                Logger.getLogger(AddAcabadosFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            STAUXILIAR.setScene(new Scene(rootRegistro));
+            STAUXILIAR.show();
         }
     }
 
-}
+

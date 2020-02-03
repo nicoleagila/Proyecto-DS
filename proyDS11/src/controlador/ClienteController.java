@@ -63,6 +63,8 @@ public class ClienteController implements Initializable {
     private TableColumn<Cliente, Integer> hijos;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

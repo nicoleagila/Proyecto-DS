@@ -8,6 +8,10 @@ package controlador;
 import controlador.diseno.EscogerCasaBaseFXMLController;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +23,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import modelo.MyHome;
+import modelo.database.Conexion;
 import static myhome.MyHome.STPRINCIPAL;
 
 /**
@@ -52,6 +58,7 @@ public class ClientePerfilController implements Initializable {
     private TextField nhijos;
     @FXML
     private TextField email;
+    Statement s1;
 
     /**
      * Initializes the controller class.
@@ -74,8 +81,12 @@ public class ClientePerfilController implements Initializable {
     }
 
     @FXML
-    private void save(ActionEvent event) {
-        
+    private void save(ActionEvent event) throws SQLException {
+        Conexion c = Conexion.getInstance();
+        Connection bd= c.getConexion();
+        String queryReg = "INSERT INTO Usuarios values("+id_c.getText()+nombre.getText()+apellido.getText()+numero_c.getText()+email.getText()+direccion_d.getText()+numero_t.getText()+estadocivil.getValue()+"\")";
+        PreparedStatement pst = MyHome.getBD().prepareStatement(queryReg);
+        pst.execute();
     }
     
 }
